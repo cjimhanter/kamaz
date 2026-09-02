@@ -1,0 +1,265 @@
+:root {
+  --bg: #f3efe6;
+  --ink: #1c1914;
+  --muted: #5c564c;
+  --line: #d7cfc0;
+  --card: #fffdf8;
+  --accent: #c45a12;
+  --accent-ink: #fff7ee;
+  --photo: #2a2722;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.45;
+  padding-bottom: 5.5rem;
+}
+
+.top,
+.foot,
+main {
+  width: min(920px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1.25rem 0 0.5rem;
+}
+
+.brand {
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+  letter-spacing: 0.01em;
+}
+
+.phone-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.95rem;
+}
+
+.hero {
+  padding: 1.5rem 0 2rem;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+h1 {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  line-height: 1.05;
+  margin: 0.3rem 0 1rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 38rem;
+}
+
+.hero-actions,
+.grid-3,
+.machine {
+  display: grid;
+  gap: 1rem;
+}
+
+.hero-actions {
+  margin-top: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 3rem;
+  padding: 0.7rem 1.1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn.ghost {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.grid-3 {
+  padding: 0 0 2rem;
+}
+
+.grid-3 article,
+.form-wrap,
+.machine {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem;
+}
+
+.machine {
+  margin-bottom: 2rem;
+}
+
+.machine-photo {
+  min-height: 180px;
+  background:
+    repeating-linear-gradient(
+      -12deg,
+      #3a352e 0 12px,
+      #2f2b25 12px 24px
+    );
+  color: #d7cfc0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 10px;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.9rem;
+}
+
+.machine ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.form-wrap {
+  margin-bottom: 2rem;
+}
+
+form {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.9rem;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  font-size: 1rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+}
+
+button.btn {
+  width: 100%;
+  margin-top: 0.4rem;
+}
+
+.foot {
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding-bottom: 1rem;
+}
+
+.draft {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8rem;
+}
+
+.dock {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  padding: 0.65rem 0.85rem calc(0.65rem + env(safe-area-inset-bottom));
+  background: rgba(243, 239, 230, 0.94);
+  border-top: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+}
+
+.dock a {
+  display: grid;
+  place-items: center;
+  min-height: 2.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.dock-call {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.dock-form {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+@media (min-width: 720px) {
+  .hero-actions,
+  .grid-3,
+  .machine {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .hero-actions .btn {
+    max-width: 16rem;
+  }
+
+  button.btn {
+    width: auto;
+    justify-self: start;
+    min-width: 16rem;
+  }
+}

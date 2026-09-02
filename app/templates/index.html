@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <p class="kicker">{{ city }}</p>
+  <h1>Щебень под ключ.<br />Сами купим, сами привезём.</h1>
+  <p class="lead">
+    Вы не едете на карьер. Берём материал, везём Камазом на участок, выгружаем,
+    расчёт за материал и доставку вместе. Оставьте телефон: если за рулём не
+    возьмём трубку, заявка всё равно дойдёт.
+  </p>
+  <div class="hero-actions">
+    <a class="btn primary" href="#zayavka">Оставить заявку</a>
+    <a class="btn ghost" href="tel:{{ phone_tel }}">{{ phone }}</a>
+  </div>
+</section>
+
+<section class="grid-3">
+  <article>
+    <h2>Что привозим</h2>
+    <p>Щебень. Песок и отсев, если напишете. На карьере берём то, что нужно под ваш участок.</p>
+  </article>
+  <article>
+    <h2>Как считать</h2>
+    <p>
+      Обычно заказывают «машину». Это один кузов. Кубы, сотки или «на дорожку»
+      напишите как есть. Цену скажем по телефону: на карьере цифры меняются,
+      на сайте их не рисуем.
+    </p>
+  </article>
+  <article>
+    <h2>Как платить</h2>
+    <p>
+      Один расчёт: материал плюс доставка. Наличные или перевод, как договоримся.
+      Онлайн-оплаты на сайте нет.
+    </p>
+  </article>
+</section>
+
+<section class="machine">
+  <div class="machine-photo" role="img" aria-label="Место для фото Камаза">
+    Фото Камаза появится здесь
+  </div>
+  <div>
+    <h2>Своя машина, не диспетчер</h2>
+    <p>
+      Работаем в {{ city }}. Сами едем на карьер, сами везём, сами выгружаем.
+      Узкий заезд и дальние адреса скажите сразу: если Камаз не пройдёт, не поедем зря.
+    </p>
+    <ul>
+      <li>Под ключ: закупка + доставка + выгрузка</li>
+      <li>Заявка с сайта или звонок</li>
+      <li>Если день уже забит, перенесём или отдадим своему, заявку не бросим</li>
+    </ul>
+  </div>
+</section>
+
+<section id="zayavka" class="form-wrap">
+  <h2>Заявка</h2>
+  <p class="lead">Телефон обязателен. Остальное можно договорить голосом.</p>
+  <form method="post" action="/zayavka" accept-charset="utf-8">
+    <label>
+      Имя
+      <input type="text" name="name" autocomplete="name" />
+    </label>
+    <label>
+      Телефон
+      <input type="tel" name="phone" required autocomplete="tel" placeholder="+7" />
+    </label>
+    <label>
+      Материал
+      <select name="material">
+        <option value="щебень">Щебень</option>
+        <option value="песок">Песок</option>
+        <option value="отсев">Отсев</option>
+        <option value="не знаю">Не знаю, подскажите</option>
+      </select>
+    </label>
+    <label>
+      Объём
+      <input type="text" name="volume" placeholder="Одна машина / 10 кубов / сотка" />
+    </label>
+    <label>
+      Куда везти
+      <input type="text" name="address" autocomplete="street-address" placeholder="Населённый пункт, улица" />
+    </label>
+    <label>
+      Когда
+      <input type="text" name="when_needed" placeholder="Как можно скорее / дата" />
+    </label>
+    <label>
+      Комментарий
+      <textarea name="comment" rows="3" placeholder="Узкий заезд, нужен отсев, этаж не нужен"></textarea>
+    </label>
+    <button class="btn primary" type="submit">Отправить заявку</button>
+  </form>
+</section>
+{% endblock %}

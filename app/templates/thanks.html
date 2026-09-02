@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <h1>Заявка ушла.</h1>
+  <p class="lead">
+    Перезвоним по номеру, который вы оставили. Если нужно быстрее:
+    <a href="tel:{{ phone_tel }}">{{ phone }}</a>
+  </p>
+  <a class="btn primary" href="/">На главную</a>
+</section>
+{% endblock %}

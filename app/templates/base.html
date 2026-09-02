@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title or site_name }}</title>
+    <meta
+      name="description"
+      content="Щебень под ключ: закупка на карьере и доставка Камазом. {{ city }}. Заявка с сайта или звонок."
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <a class="brand" href="/">{{ site_name }}</a>
+      <a class="phone-link" href="tel:{{ phone_tel }}">{{ phone }}</a>
+    </header>
+    <main>{% block content %}{% endblock %}</main>
+    <footer class="foot">
+      <p>{{ city }}. Щебень под ключ. Самосвал. Заявка или звонок.</p>
+      <p class="draft">Черновик: телефон, район и цены подставим после разговора с водителем.</p>
+    </footer>
+    <nav class="dock" aria-label="Быстрые действия">
+      <a class="dock-call" href="tel:{{ phone_tel }}">Позвонить</a>
+      <a class="dock-form" href="/#zayavka">Заявка</a>
+    </nav>
+  </body>
+</html>
